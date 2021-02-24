@@ -16,3 +16,8 @@ login_backend:
       contexts:
         - Zitro\Tests\Shared\Infrastructure\Behat\ApiRequestContext
         - Zitro\Tests\Shared\Infrastructure\Behat\ApiResponseContext
+    auth:
+      paths: [ tests/apps/login/backend/features/auth ]
+      contexts:
+        - Zitro\Tests\Shared\Infrastructure\Behat\ApiRequestContext
+        - Zitro\Tests\Shared\Infrastructure\Behat\ApiResponseContext

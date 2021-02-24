@@ -1,0 +1,4 @@
+auth_post:
+    path: /auth
+    controller: Zitro\Apps\Login\Backend\Controller\Auth\AuthPostController
+    methods:  [POST]
