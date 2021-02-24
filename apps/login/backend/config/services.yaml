@@ -8,3 +8,10 @@ services:
   Zitro\Apps\Login\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
+
+  Zitro\:
+    resource: '../../../../src'
+
+  Zitro\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
