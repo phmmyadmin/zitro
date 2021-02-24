@@ -6,6 +6,8 @@ namespace Zitro\Auth\Application;
 
 use Zitro\Auth\Domain\AuthRepository;
 use Zitro\Auth\Domain\AuthUser;
+use Zitro\Auth\Domain\PasswordNoMatchesException;
+use Zitro\Auth\Domain\UserNoExistsException;
 
 class Authenticator
 {
@@ -27,13 +29,13 @@ class Authenticator
     public function ensureUserExists(AuthUser $authUser , string $authEmail): void
     {
         if (null === $authUser)
-            throw new \Exception($authEmail);
+            throw new UserNoExistsException($authEmail);
 
     }
 
     public function ensureCredentialsAreValid(AuthUser $authUser , string $authPassword): void
     {
         if (! $authUser->passwordMatches($authPassword))
-            throw new \Exception($authPassword);
+            throw new PasswordNoMatchesException($authPassword);
     }
 }
