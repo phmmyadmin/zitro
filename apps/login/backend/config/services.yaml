@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+
+  Zitro\Apps\Login\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
