@@ -10,3 +10,9 @@ login_backend:
           symfony: ~
       base_url: ''
 
+  suites:
+    health_check:
+      paths: [ tests/apps/login/backend/features/health-check ]
+      contexts:
+        - Zitro\Tests\Shared\Infrastructure\Behat\ApiRequestContext
+        - Zitro\Tests\Shared\Infrastructure\Behat\ApiResponseContext
