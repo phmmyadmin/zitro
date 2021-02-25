@@ -1,8 +1,8 @@
-.PONY: build deps composer-install composer-update composer reload test run-tests start stop destroy doco rebuild start-local
+.PONY: build deps composer-install composer-update composer reload test run-tests start stop destroy doco rebuild start-local change-permissions
 
 current-dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-build: deps start
+build: deps start change-permissions
 
 deps: composer-install
 
@@ -33,6 +33,10 @@ run-tests:
 start: CMD=up -d
 stop: CMD=stop
 destroy: CMD=down
+
+# Permissions to cache
+change-permissions:
+	chmod -R 777 apps/login/backend
 
 # Usage: `make doco CMD="ps --services"`
 # Usage: `make doco CMD="build --parallel --pull --force-rm --no-cache"`
