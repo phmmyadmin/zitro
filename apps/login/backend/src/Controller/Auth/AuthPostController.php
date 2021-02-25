@@ -19,7 +19,7 @@ final class AuthPostController
         $this->authenticator = $authenticator;
     }
 
-    public function __invoke(Request $request): Response
+    public function __invoke(Request $request): JsonResponse
     {
         try {
             ($this->authenticator)($request->get('email'), $request->get('password'));
@@ -27,7 +27,7 @@ final class AuthPostController
         } catch (\Exception $exception) {
             $rc = Response::HTTP_UNAUTHORIZED;
         } finally {
-            return new Response('', $rc);
+            return new JsonResponse('', $rc);
         }
     }
 }

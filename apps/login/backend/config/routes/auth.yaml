@@ -2,3 +2,8 @@ auth_post:
     path: /auth
     controller: Zitro\Apps\Login\Backend\Controller\Auth\AuthPostController
     methods:  [POST]
+
+auth_get_web:
+    path: /
+    controller: Zitro\Apps\Login\Backend\Controller\Auth\AuthGetWebController
+    methods:  [GET]

@@ -11,6 +11,9 @@ class XmlAuthRepository implements AuthRepository
 
     public function search(string $authEmail): ?AuthUser
     {
+        if (null === $authEmail || "" === $authEmail)
+            return null;
+
         $sxml = new \SimpleXMLElement(file_get_contents(self::FILE_PATH));
         $password = $sxml->xpath("//user[email='$authEmail']/password/text()");
 

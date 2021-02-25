@@ -4,8 +4,9 @@
   "type": "project",
   "description": "Zitro Test Login",
   "require": {
-    "php": ">7.4.2.*",
+    "php": ">7.4.2",
 
+    "ext-zip": "*",
     "ext-apcu": "*",
     "ext-json": "*",
     "ext-zend-opcache": "*",
@@ -14,6 +15,7 @@
     "symfony/framework-bundle": "^4.3",
     "symfony/dotenv": "^4.3",
     "symfony/yaml": "^4.3",
+    "symfony/twig-bundle": "^4.3",
 
     "lambdish/phunctional": "^1.0",
     "ramsey/uuid": "^4.1",
